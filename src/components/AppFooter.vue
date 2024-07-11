@@ -31,7 +31,7 @@ export default {
     <!-- fine card footer centrali -->
 
     <!-- sponsor -->
-    <div class="d-flex flex-row mt-5 align-items-center card-sponsor">
+    <div class="d-flex mt-5 align-items-center justify-content-center card-sponsor">
     
       <FooterSponsor :store="store"/>
     </div>
@@ -109,11 +109,11 @@ footer {
 }
   
 .card-sponsor {
-  min-width: 200px;
+  min-width: 100%; /* Made the card full-width */
   min-height: 150px;
+  margin: 0 auto;
   background-color: #f6f6f6;
   padding: 240px 0 113px;
- 
 }
 
 .card-body {
