@@ -14,7 +14,7 @@ export default {
     <div class="ms-card">
         <!-- FRONT CARD IMAGE -->
         <div class="front-card">
-            <img :src="cardData.imgUrl" alt="cardData.name">
+            <img :src="cardData.path" alt="cardData.name">
         </div>
         <!-- BACK CARD DATA -->
         <div class="back-card text-center p-3">

@@ -2,7 +2,7 @@
 import { store } from './store';
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
-import AppChat from './components/AppChat.vue'
+
 
 
 
@@ -10,7 +10,7 @@ export default {
   components: {
     AppHeader,
     AppFooter,
-    AppChat,
+   
 
   },
   data() {
@@ -22,18 +22,28 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-
-  <AppChat :store="store"/>
-
-  <router-view class="main"></router-view>
-
-  <AppFooter />
+  <div class="background-container">
+    <AppHeader />
+    <main>
+      <router-view></router-view>
+    </main>
+  </div>
+    <AppFooter />
 
 </template>
 
 <style lang="scss">
-.main {
-  padding-top: 100px;
+.background-container {
+  min-height: 100vh;
+  background-image: url('../src/assets/img/about-img/');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
 }
 </style>
