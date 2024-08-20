@@ -39,7 +39,7 @@ export default {
 
 <template>
   <main class="container mt-5 pe-0">
-    <div class="jumbotron p-5 border-0 bg-none">
+    <div class="jumbotron  border-0 bg-none">
       <div class="container py-5">
         <h1
           class="display-5 fw-bold element-text1"
@@ -130,6 +130,9 @@ export default {
         border-right: 4px solid white; 
         padding-right: 30px; 
         font-size: 1.5rem
+    }
+    .jumbotron {
+        padding: 3rem;
     }
 
 //   animazione ingresso scritta principale
@@ -285,7 +288,8 @@ export default {
          font-size: 1rem
     }
     .element-text4{
-        padding-right: 10px;
+        padding-right: 20px;
+        margin-right: 20px;
         font-size: 1rem
     }
 
@@ -294,6 +298,10 @@ export default {
         font-size: 1rem
     }
     .router-link {
+        padding: 0;
+    }
+
+    .jumbotron {
         padding: 0;
     }
 }

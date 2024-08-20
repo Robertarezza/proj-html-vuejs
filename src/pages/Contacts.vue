@@ -160,6 +160,10 @@ export default {
     transform: translateY(0);
   }
 }
-
-
+@media (max-width: 768px) {
+    .h1 {
+        font-size: 2.5rem; 
+        max-width: 100%; /* Imposta un valore percentuale corretto per max-width */
+    }
+  }
 </style>
