@@ -1,7 +1,7 @@
 <script>
 
 
-import { store } from "../store";
+//import { store } from "../store";
 
 import AppButtonGreen from "./AppButtonGreen.vue";
 
@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      store,
+      //store,
     };
   },
 };

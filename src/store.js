@@ -1,28 +1,67 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-    // visionArray: [
-    //     {
-    //         icon: "fa-solid fa-database",
-    //         title: "Virtual Documents",
-    //         text: "Mi chiamo Massimo Decimo Meridio, comandante dell'esercito del nord, generale delle legioni Felix, servoleale dell'unico vero imperatore Marco Aurelio"
-    //     },
-    //     {
-    //         icon: "fa-solid fa-sack-dollar",
-    //         title: "Flexible Payment",
-    //         text: "Mi chiamo Massimo Decimo Meridio, comandante dell'esercito del nord, generale delle legioni Felix, servoleale dell'unico vero imperatore Marco Aurelio"
-    //     },
-    //     {
-    //         icon: "fa-solid fa-gauge-high",
-    //         title: "SEO Tools",
-    //         text: "Mi chiamo Massimo Decimo Meridio, comandante dell'esercito del nord, generale delle legioni Felix, servoleale dell'unico vero imperatore Marco Aurelio"
-    //     },
-    //     {
-    //         icon: "fa-solid fa-palette",
-    //         title: "UI Design",
-    //         text: "Mi chiamo Massimo Decimo Meridio, comandante dell'esercito del nord, generale delle legioni Felix, servoleale dell'unico vero imperatore Marco Aurelio"
-    //     },
-    // ],
+     CardHome: [
+        {
+            icon: "fa-brands fa-unity",
+            title: "Creazioni 3D",
+            text: "Creazioni 3D innovativa e accattivante"
+        },
+        {
+            icon: "fa-brands fa-unity",
+            title: "Creazioni 3D",
+            text: "Creazioni 3D innovativa e accattivante"
+        },
+        
+        {
+        icon: "fa-brands fa-unity",
+        title: "Creazioni 3D",
+        text: "Creazioni 3D innovativa e accattivante"
+        },
+        
+        {
+            icon: "fa-brands fa-unity",
+            title: "Creazioni 3D",
+            text: "Creazioni 3D innovativa e accattivante"
+        },
+     ],
+
+   
+        projects: [
+        {
+            img: "../src/assets/img/img1-removebg-preview.png",
+            title: "Creazioni 3D",
+            text: "Creazioni 3D innovativa e accattivante"
+        },
+        {
+            img: "../src/assets/img/img2-removebg-preview.png",
+            title: "Creazioni 3D",
+            text: "Creazioni 3D innovativa e accattivante"
+        },
+        
+        {
+            img: "../src/assets/img/img3-removebg-preview.png",
+            title: "Creazioni 3D",
+            text: "Creazioni 3D innovativa e accattivante"
+        },
+        
+        {
+            img: "../src/assets/img/img4-removebg-preview.png",
+            title: "Creazioni 3D",
+            text: "Creazioni 3D innovativa e accattivante"
+        },
+        {
+            img: "../src/assets/img/img5-removebg-preview.png",
+            title: "FUNKO POP",
+            text: "Crea il Funko POP di te stesso o dei tuoi amici"
+        },
+        {
+            img: "../src/assets/img/IMG_2679-removebg-preview.png",
+            title: "Creazioni 3D",
+            text: "Creazioni 3D innovativa e accattivante"
+        },
+     ],
+  
 
     
     

@@ -35,7 +35,7 @@ export default {
 <style lang="scss">
 .background-container {
   min-height: 100vh;
-  background-image: url('../src/assets/img/about-img/');
+  background-image: url('../src/assets/img/sfondo53.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

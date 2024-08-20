@@ -1,14 +1,13 @@
 <script>
-// import AppCardContact from "../components/AppCardContact.vue";
-import AppButton from "../components/AppButton.vue";
-//import ContactForm from "../components/ContactForm.vue";
+
+
+
+import ContactForm from "../components/ContactForm.vue";
 import { store } from "../store";
 
 export default {
   components: {
-    //AppCardContact,
-    AppButton,
-    //ContactForm,
+ ContactForm,
   },
   data() {
     return {
@@ -19,71 +18,147 @@ export default {
 </script>
 
 <template>
-  <!-- title -->
-  <div class="title-contact title-color">
-    <h1>Contact Page</h1>
+<div class="container">
+  <h1 style="margin-top: 100px; font-size: 4rem; color: #f15048; max-width: min-content;" class="element-text1">Trasforma la tua immaginazione in realtà!</h1>
+  <p class="animated-text" style="color: white; font-size: 1.5rem; margin-top: 20px;">
+  Siamo qui per rendere unico il tuo mondo con quadretti 3D dei tuoi personaggi preferiti, stampe realistiche che li portano in vita e la personalizzazione dei tuoi Funko Pop! Hai un'idea? Contattaci e insieme daremo forma ai tuoi sogni!
+</p>
+  <div class="container mt-5 mb-5" style="border-top: 4px solid #f15048;">
+  <div class="row mt-5">
+    <!-- Colonna per il modulo -->
+    <ContactForm />
   </div>
-  <!-- mappa -->
-  <div class="container-fluid mt-5 d-flex flex-column map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11215.738399554728!2d11.024545221792247!3d45.35013243715403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1723654832535!5m2!1sit!2sit" width="300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
-  </div>
-    <!-- container card -->
-    <!-- <div class="container mt-3">
-      <AppCardContact :store="store" />
-    </div> -->
- 
-  <!-- /container card -->
-  <!-- section contact -->
-
-  <!-- <section class="scroll-animation">
-    <div class="cont-contact container-fluid pt-5 d-flex">
-      <div class="row">
-        <ContactForm />
-      </div>
-    </div>
-  </section> -->
-  <!-- /section contact -->
+</div>
+</div>
 </template>
 
 <style lang="scss" scoped>
-@use "../style/partials/_variables" as*;
-
-.title-contact {
-  text-align: center;
-  padding-top: 80px;
-  background-image: $third-background;
-
-  h1 {
-    color: $title-color;
-    font-weight: 600;
-    font-size: 3rem;
-    box-shadow: inset gray 0px 10px 20px -10px;
-    padding: 4rem 0;
+//   animazione ingresso scritta principale
+@-webkit-keyframes bounce-in-right {
+  0% {
+    -webkit-transform: translateX(600px);
+    transform: translateX(600px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateX(68px);
+    transform: translateX(68px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateX(32px);
+    transform: translateX(32px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
 }
-html,
-body {
-  height: 100%;
-  margin: 0;
+@keyframes bounce-in-right {
+  0% {
+    -webkit-transform: translateX(600px);
+    transform: translateX(600px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateX(68px);
+    transform: translateX(68px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateX(32px);
+    transform: translateX(32px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
 }
 
-.container-fluid {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.element-text1 {
+  -webkit-animation: bounce-in-right 1.5s both;
+  animation: bounce-in-right 1.1s both; /* Per Safari e versioni più vecchie di Chrome */
 }
 
-iframe {
-  flex-grow: 1;
-  width: 100%;
-  height: 70vh;
+.animated-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease-out forwards;
 }
 
-.cont-contact {
-  padding-right: 100px;
-  padding-left: 100px;
-  margin-top: 60px;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 

@@ -1,170 +1,317 @@
 <script>
-//import AppCardHome from '../components/AppCardHome.vue';
-//import AppOtherProject from '../components/AppOtherProject.vue';
-// import AppPackPrices from '../components/AppPackPrices.vue';
-//import AppCitHomepage from '../components/AppCitHomepage.vue';
-//import AppCardPackPrices from '../components/AppCardPackPrices.vue';
-// import AppNewsBlog from '../components/AppNewsBlog.vue';
-//import AppCarousel from '../components/AppCarousel.vue';
-//import AppDoubleCard from '../components/AppDoubleCard.vue';
-// import AppOurMissionSec from '../components/AppOurMissionSec.vue';
-//import AppOtherProjectSection from '../components/AppOtherProjectSection.vue';
-//import AppStylishSection from '../components/AppStylishSection.vue';
-import { store } from '../store';
-import AppButton from '../components/AppButton.vue'
+import { store } from "../store";
+import AppButton from "../components/AppButton.vue";
+import AppCardHome from "../components/AppCardHome.vue";
+import AppProject from "../components/AppProject.vue";
+import ContactForm from "../components/ContactForm.vue";
+console.log(store);
 
 export default {
-    components: {
-        //AppCardHome,
-        //AppOtherProject,
-        AppButton,
-        // AppPackPrices,
-        //AppCardPackPrices,
-        //AppCitHomepage,
-        // AppNewsBlog,
-        //AppCarousel,
-        //AppDoubleCard,
-        // AppOurMissionSec,
-        //AppOtherProjectSection,
-        //AppStylishSection,
+  components: {
+    AppButton,
+    AppCardHome,
+    AppProject,
+    ContactForm,
+  },
+  data() {
+    return {
+      store,
+      currentIndex: 0,
+    };
+  },
+  computed: {},
+  methods: {
+    nextImage() {
+      if (this.store.projects.length) {
+        this.currentIndex = (this.currentIndex + 1) % this.store.projects.length;
+      }
     },
-    data() {
-        return {
-            store,
-        }
-    }
-}
+    prevImage() {
+      if (this.store.projects.length) {
+        this.currentIndex =
+          (this.currentIndex - 1 + this.store.projects.length) %
+          this.store.projects.length;
+      }
+    },
+  },
+};
 </script>
 
 <template>
-    <main class="container-fluid">
-     
-        
-<div class="jumbotron p-5 bg-light border-0 d-none">
-    <div class="container py-5">
-
-        <h1 class="display-5 fw-bold element-text1" style=" max-width: min-content; font-size: 5rem; color: #f15048">
-            Creazioni 3D: la soluzione per la visualizzazione realistica
+  <main class="container mt-5 pe-0">
+    <div class="jumbotron p-5 border-0 bg-none">
+      <div class="container py-5">
+        <h1
+          class="display-5 fw-bold element-text1"
+          style="">
+          Creazioni 3D: la soluzione per la visualizzazione realistica
         </h1>
-        <ul class="d-flex g-3 mt-5" style="list-style-type:none; color: #f15048">
-            <li class="me-3 element-text2" style="border-right: 4px solid white; padding-right: 30px; font-size: 1.5rem">Chi siamo</li>
-            <li class="me-3 element-text3" style="border-right: 4px solid white; padding-right: 30px; font-size: 1.5rem">Progetti</li>
-            <li class="element-text4" style="font-size: 1.5rem">Articoli</li>
+        <ul class="d-flex g-3 mt-5 list_home" style="">
+          <li class="me-3 element-text2"
+            style=""
+          >
+            <router-link :to="{ name: 'about' }" class="nav-link p-3"
+              >Chi siamo</router-link
+            >
+          </li>
+          <li
+            class="me-3 element-text3"
+            style=""
+          >
+            <router-link :to="{ name: 'projects' }" class="nav-link p-3"
+              >Progetti</router-link
+            >
+          </li>
+          <li class="element-text4" style="">
+            <router-link :to="{ name: 'contacts' }" class="nav-link p-3"
+              >Contattaci</router-link
+            >
+          </li>
         </ul>
+      </div>
     </div>
-</div>
-<div class="content pb-5 d-none" style="background-color: #1b0c3b;">
-    <div class="container">
-        <div class="row pt-5">
-            <div class="col-3">
+   
+      <div class="container">
+        <div class="row pt-5 row_card">
+          <AppCardHome />
+        </div>
+      </div>
+  
+    <div class="content mb-5">
+      <div class="container">
+        <h3 style="color: #f15048; font-size: 3.2rem" class="pt-5 text-center fw-bold">
+          Le nostre opere
+        </h3>
+        <p style="color: #f15048; font-size: 1.2rem" class="text-center mb-3">
+          Il risultato del nostro processo di branding aziendale è una linea guida
+          completa del marchio che può essere utilizzata per progettare un sito web di
+          marketing e altre risorse di progettazione come le illustrazioni del marchio che
+          riflettano il nuovo marchio .
+        </p>
+        <div class="carousel">
+          <!-- Carosello -->
+          <AppProject />
+        </div>
+      </div>
+    </div>
 
-                <div class="card  p-3 rounded element-class" style="">
-                    <i class="fa-brands fa-unity text-shadow-pop-bottom  " style="font-size: xxx-large;"></i>
-                    <p class="mt-4">Creazioni 3D</p>
-                    <p style="text-align: center;">Creazioni 3D innovativa e accattivante.</p>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card p-3 rounded element-class" style="">
-                    <i class="fa-brands fa-unity text-shadow-pop-bottom  " style="font-size: xxx-large;"></i>
-                    <p class="mt-4">Creazioni 3D</p>
-                    <p style="text-align: center;">Creazioni 3D innovativa e accattivante.</p>
-                </div>
-            </div>
-            <div class="col-3 ">
-                <div class="card  p-3 rounded element-class" style="">
-                    <i class="fa-brands fa-unity text-shadow-pop-bottom  " style="font-size: xxx-large;"></i>
-                    <p class="mt-4">Creazioni 3D</p>
-                    <p style="text-align: center;">Creazioni 3D innovativa e accattivante.</p>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card   p-3 rounded element-class" style="">
-                    <i class="fa-brands fa-unity text-shadow-pop-bottom  " style="font-size: xxx-large;"></i>
-                    <p class="mt-4">Creazioni 3D</p>
-                    <p style="text-align: center;">Creazioni 3D innovativa e accattivante.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="content" >
-<div class="container d-none "  >
-
-    <h3 style=" color: #f15048; font-size: 3.2rem;" class="pt-5 text-center fw-bold">Le nostre opere</h3>
-    <p style=" color: #f15048; font-size: 1.2rem;" class="text-center mb-3">Il risultato del nostro processo di branding aziendale è una linea guida completa del marchio che può essere utilizzata per progettare un sito web di marketing e altre risorse di progettazione come le illustrazioni del marchio che riflettano il nuovo marchio .</p>
-    <div class="row mt-5" id="card-container">
-    <!-- Prima riga di card -->
-    <div class="col-md-4 mb-4">
-        <div class="card bg-image  " style="background-image: url('/img/spider.jpeg');">
-            <!-- <div class="card-body">
-                <h5 class="card-title">Card Title 1</h5>
-                <p class="card-text">Descrizione della card numero 1.</p>
-                <a href="#" class="btn btn-primary">Scopri di più</a>
-            </div> -->
-        </div>
-    </div>
-    <div class="col-md-4 mb-4">
-        <div class="card bg-image" style="background-image: url('/img/spider.jpeg');">
-            <!-- <div class="card-body">
-                <h5 class="card-title">Card Title 2</h5>
-                <p class="card-text">Descrizione della card numero 2.</p>
-                <a href="#" class="btn btn-primary">Scopri di più</a>
-            </div> -->
-        </div>
-    </div>
-    <div class="col-md-4 mb-4">
-        <div class="card bg-image" style="background-image: url('/img/spider.jpeg');">
-            <!-- <div class="card-body">
-                <h5 class="card-title">Card Title 3</h5>
-                <p class="card-text">Descrizione della card numero 3.</p>
-                <a href="#" class="btn btn-primary">Scopri di più</a>
-            </div> -->
-        </div>
-    </div>
-    <!-- Seconda riga di card -->
-    <div class="col-md-4 mb-4">
-        <div class="card bg-image" style="background-image: url('/img/spider.jpeg');">
-            <!-- <div class="card-body">
-                <h5 class="card-title">Card Title 4</h5>
-                <p class="card-text">Descrizione della card numero 4.</p>
-                <a href="#" class="btn btn-primary">Scopri di più</a>
-            </div> -->
-        </div>
-    </div>
-    <div class="col-md-4 mb-4">
-        <div class="card bg-image" style="background-image: url('/img/spider.jpeg');">
-            <!-- <div class="card-body">
-                <h5 class="card-title">Card Title 5</h5>
-                <p class="card-text">Descrizione della card numero 5.</p>
-                <a href="#" class="btn btn-primary">Scopri di più</a>
-            </div> -->
-        </div>
-    </div>
-    <div class="col-md-4 mb-4">
-        <div class="card bg-image" style="background-image: url('/img/spider.jpeg');">
-            <!-- <div class="card-body">
-                <h5 class="card-title">Card Title 6</h5>
-                <p class="card-text">Descrizione della card numero 6.</p>
-                <a href="#" class="btn btn-primary">Scopri di più</a>
-            </div> -->
-        </div>
-    </div>
-</div>
-
-
-</div>
-</div>
-           
-    
-    </main>
+    <div class="container mt-5 mb-5" style="border-top: 4px solid #f15048">
+      
+        <!-- Colonna per il modulo -->
+        <ContactForm />
+      </div>
+  
+  </main>
 </template>
 
 <style lang="scss" scoped>
-main {
-    padding-top: 80px;
+
+.element-text1 {
+       max-width: min-content; 
+       font-size: 5rem; 
+       color: #f15048;
+    }
+
+    .list_home {
+        list-style-type: none; 
+        color: #f15048
+    }
+
+    .element-text2 {
+        border-right: 4px solid white;
+         padding-right: 30px; 
+         font-size: 1.5rem
+    }
+    .element-text4 {
+        font-size: 1.5rem
+    }
+
+    .element-text3 {
+        border-right: 4px solid white; 
+        padding-right: 30px; 
+        font-size: 1.5rem
+    }
+
+//   animazione ingresso scritta principale
+@-webkit-keyframes bounce-in-right {
+  0% {
+    -webkit-transform: translateX(600px);
+    transform: translateX(600px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateX(68px);
+    transform: translateX(68px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateX(32px);
+    transform: translateX(32px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes bounce-in-right {
+  0% {
+    -webkit-transform: translateX(600px);
+    transform: translateX(600px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateX(68px);
+    transform: translateX(68px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateX(32px);
+    transform: translateX(32px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
 }
 
+.element-text1 {
+  -webkit-animation: bounce-in-right 1.5s both;
+  animation: bounce-in-right 1.1s both; /* Per Safari e versioni più vecchie di Chrome */
+}
+
+.element-text2 {
+  -webkit-animation: bounce-in-right 1.5s both;
+  animation: bounce-in-right 1.3s both; /* Per Safari e versioni più vecchie di Chrome */
+}
+
+.element-text3 {
+  -webkit-animation: bounce-in-right 1.5s both;
+  animation: bounce-in-right 1.4s both; /* Per Safari e versioni più vecchie di Chrome */
+}
+.element-text4 {
+  -webkit-animation: bounce-in-right 1.5s both;
+  animation: bounce-in-right 1.5s both; /* Per Safari e versioni più vecchie di Chrome */
+}
+
+//carosello
+
+.carousel {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+    .element-text1 {
+        font-size: 2.5rem; 
+        max-width: 100%; /* Imposta un valore percentuale corretto per max-width */
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    .list_home {
+        font-size: 0.9rem;
+    }
+    .element-text2 {
+       // border-right: 2px solid white;
+        padding: 0;
+        margin: 0;
+         padding-right: 15px; 
+         font-size: 1rem
+    }
+    .element-text4{
+        padding-right: 10px;
+        font-size: 1rem
+    }
+
+    .element-text3 {
+        padding-right: 10px;
+        font-size: 1rem
+    }
+    .router-link {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .row_card {
+        margin-left: 40px;
+    }
+    
+   
+}
+@media (max-width: 768px) {
+    .carousel {
+        padding-bottom: 15px;
+    }
+    
+   
+}
 
 
 

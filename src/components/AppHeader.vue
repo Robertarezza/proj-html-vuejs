@@ -50,16 +50,24 @@ export default {
     height: 80px;
     position: fixed;
     width: 100%;
-    z-index: 2;
-    background-color: white;
-    box-shadow: 2px 2px 10px #888888;
+    z-index: 100;
+    //background-color: white;
+    //box-shadow: 2px 2px 10px #888888;
+   // background-color: #1b0c3b;
+    //border-radius: 20px;
     padding: 0 20px;
+   // margin-top: 20px;
 
     .img-container {
-        width: 20%;
-        line-height: 75px;
+        width: 50%;
+        //line-height: 75px;
     }
 
+    img {
+        max-width: 40%;
+        filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(180deg);
+       
+    }
     .hamburger-menu {
         display: none;  // Sarà visibile solo sui dispositivi mobili
         flex-direction: column;
@@ -94,10 +102,14 @@ export default {
 
         li {
             margin: 0 10px;
+            color: #f15048;
+            font-weight: 800;
+            
+           
         }
-
+        
         .router-link-active {
-            color: blue;
+            color: rgb(174, 174, 187);
             font-weight: 600;
         }
     }
