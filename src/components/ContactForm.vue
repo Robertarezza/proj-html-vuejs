@@ -501,6 +501,18 @@ components: {
         flex-direction: column-reverse; /* Inverti la direzione del flex */
     }
     
+    .wrapper .facebook {
+      background:#1877f2 ;
+      color: #fff;
+    }
+
+    .wrapper .icon svg {
+      fill: #fff;
+    }
+    .wrapper .instagram {
+      background: #e4405f;
+      color: #fff;
+    }
    
 }
 </style>

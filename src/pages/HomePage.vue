@@ -38,7 +38,7 @@ export default {
 </script>
 
 <template>
-  <main class="container mt-5 pe-0">
+  <main class="container mt-5">
     <div class="jumbotron  border-0 bg-none">
       <div class="container py-5">
         <h1
@@ -48,19 +48,17 @@ export default {
         </h1>
         <ul class="d-flex g-3 mt-5 list_home" style="">
           <li class="me-3 element-text2"
-            style=""
-          >
+            style="">
             <router-link :to="{ name: 'about' }" class="nav-link p-3"
-              >Chi siamo</router-link
-            >
+              >Chi siamo</router-link>
           </li>
           <li
             class="me-3 element-text3"
-            style=""
-          >
-            <router-link :to="{ name: 'projects' }" class="nav-link p-3"
+            style="">
+            <!-- <router-link :to="{ name: 'projects' }" class="nav-link p-3"
               >Progetti</router-link
-            >
+            > -->
+            <a href="#project">Progetti</a>
           </li>
           <li class="element-text4" style="">
             <router-link :to="{ name: 'contacts' }" class="nav-link p-3"
@@ -77,8 +75,8 @@ export default {
         </div>
       </div>
   
-    <div class="content mb-5">
-      <div class="container">
+    <div class="content mb-5  pe-0 me-0 ms-0 pe-0 ps-0">
+      <div class="container  pe-0 me-0 ms-0 pe-0 ps-0">
         <h3 style="color: #f15048; font-size: 3.2rem" class="pt-5 text-center fw-bold">
           Le nostre opere
         </h3>
@@ -88,10 +86,11 @@ export default {
           marketing e altre risorse di progettazione come le illustrazioni del marchio che
           riflettano il nuovo marchio .
         </p>
-        <div class="carousel">
+       
           <!-- Carosello -->
           <AppProject />
-        </div>
+      
+        
       </div>
     </div>
 
@@ -134,6 +133,24 @@ export default {
     .jumbotron {
         padding: 3rem;
     }
+    ul{
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      padding-left: 0;
+
+      li{
+      a{
+      text-decoration: none;
+      color: #f15048
+      }
+    }
+    }
+    .nav-link {
+      padding: 0  !important;
+      padding-right: 14px !important;
+    }
+   
 
 //   animazione ingresso scritta principale
 @-webkit-keyframes bounce-in-right {
@@ -261,6 +278,9 @@ export default {
 }
 
 //carosello
+.content {
+      height: 130vh;
+    }
 
 .carousel {
   width: 100%;
@@ -273,19 +293,33 @@ export default {
         font-size: 2.5rem; 
         max-width: 100%; /* Imposta un valore percentuale corretto per max-width */
     }
-    ul {
-        margin: 0;
-        padding: 0;
+    
+    ul{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li{
+      a{
+      text-decoration: none;
+      color: #f15048
+      }
+    }
     }
     .list_home {
         font-size: 0.9rem;
     }
+    .nav-link {
+      padding: 0  !important;
+      padding-right: 14px !important;
+    }
     .element-text2 {
-       // border-right: 2px solid white;
-        padding: 0;
+      
+        padding: 0 !important;
         margin: 0;
-         padding-right: 15px; 
+         //padding-right: 15px; 
          font-size: 1rem
+         
     }
     .element-text4{
         padding-right: 20px;
@@ -318,6 +352,9 @@ export default {
         padding-bottom: 15px;
     }
     
+    .content {
+      height: 120vh;
+    }
    
 }
 

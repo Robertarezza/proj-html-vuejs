@@ -14,6 +14,9 @@ export default {
         toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen;
         },
+        closeMenu() {
+            this.isMenuOpen = false;
+        }
     },
 }
 </script>
@@ -35,12 +38,16 @@ export default {
         <!-- MENU LIST ITEM -->
         <ul class="menu-list align-items-center" :class="{ 'active': isMenuOpen }">
             <li v-for="item in menu" :key="item.routeName">
-                <router-link :to="{ name: item.routeName }" class="nav-link p-3">{{ item.title }}</router-link>
+                <router-link 
+                    :to="{ name: item.routeName }" 
+                    class="nav-link p-3" 
+                    @click.native="closeMenu">
+                    {{ item.title }}
+                </router-link>
             </li>
         </ul>
     </section>
 </template>
-
 
 <style lang="scss" scoped>
 .header-menu {
@@ -53,7 +60,7 @@ export default {
     z-index: 100;
     //background-color: white;
     //box-shadow: 2px 2px 10px #888888;
-   // background-color: #1b0c3b;
+   background-color: #054a59;
     //border-radius: 20px;
     padding: 0 20px;
    // margin-top: 20px;
